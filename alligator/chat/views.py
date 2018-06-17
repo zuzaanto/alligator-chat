@@ -3,7 +3,7 @@ from django.views import generic
 
 from django.http import HttpResponse
 
-from .models import User, Conversation, Message
+from .models import Conversation, Message
 
 class IndexView(generic.ListView):
     template_name = 'chat/index.html'
