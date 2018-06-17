@@ -16,4 +16,4 @@ class ConversationView(generic.ListView):
     context_object_name = 'messages_list'
 
     def get_queryset(self):
-        return Message.objects.order_by('-pub_date')
+        return Message.objects.order_by('pub_date')

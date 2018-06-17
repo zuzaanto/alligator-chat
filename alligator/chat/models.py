@@ -4,10 +4,14 @@ from django.db import models
 
 class User(models.Model):
     name = models.CharField(max_length=100)
+    def __str__(self):
+        return self.name
 
 class Conversation(models.Model):
     name = models.CharField(max_length=100)
     users = models.ManyToManyField('User')
+    def __str__(self):
+        return self.name
 
 class Message(models.Model):
     conversation_id = models.ForeignKey(Conversation, on_delete=models.CASCADE)

@@ -1,6 +1,7 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}" />
+<h1>Your conversations:</h1>
 {% if conversations_list %}
     <ul>
     {% for conversation in conversations_list %}

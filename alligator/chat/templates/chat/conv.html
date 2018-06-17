@@ -1,10 +1,14 @@
 {% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}" />
+<h1>Conversation:</h1>
 {% if messages_list %}
     <ul>
     {% for message in messages_list %}
-        <li>{{ message.text }}</li>
+        <li>
+            <font size="4">{{ message.text }}</font>
+            <font color="gray"><i>{{ message.user }} - {{ message.pub_date }} </i></font> 
+        </li>
     {% endfor %}
     </ul>
 {% else %}
