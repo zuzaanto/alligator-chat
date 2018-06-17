@@ -1,0 +1,12 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}" />
+{% if messages_list %}
+    <ul>
+    {% for message in messages_list %}
+        <li>{{ message.text }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No messages are available.</p>
+{% endif %}
