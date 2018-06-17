@@ -1,0 +1,12 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'chat/style.css' %}" />
+{% if conversations_list %}
+    <ul>
+    {% for conversation in conversations_list %}
+        <li><a href="{% url 'chat:conversation' conversation.id %}">{{ conversation.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No conversations available.</p>
+{% endif %}
